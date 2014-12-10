@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Jolo's Blog{% block title %}{% endblock %}</title>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-slate.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+
+    {% block script %}{% endblock %}
+</head>
+
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-xs-12'>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

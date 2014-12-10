@@ -53,6 +53,7 @@ ROOT_URLCONF = 'jblog.urls'
 
 WSGI_APPLICATION = 'jblog.wsgi.application'
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -60,7 +61,7 @@ WSGI_APPLICATION = 'jblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'sqlite.db'),
     }
 }
 
@@ -92,11 +93,25 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
-import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd25rvl890p6o19',
+        'USER': 'nlzuvigzfimflx',
+        'PASSWORD': 'gb5VGVwELtDmFACw75RLhLqq5W',
+        'HOST':'ec2-54-225-243-113.compute-1.amazonaws.com',
+        'PORT':'5432'
+    }
+}
