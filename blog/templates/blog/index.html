@@ -13,7 +13,13 @@
 		</div>
     {% endfor %}
 {% else %}
-    <p>There are currently no posts!</p>
+	<div class="panel panel-default">
+		<div class='panel-body'>
+			<div class='alert alert-danger'>
+				There are currently no posts!
+			</div>        
+    	</div>
+	</div>
 {% endif %}
 
 {% endblock %}

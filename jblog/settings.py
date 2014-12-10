@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'blog',
 )
 
@@ -47,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'jblog.urls'
@@ -54,6 +57,8 @@ ROOT_URLCONF = 'jblog.urls'
 WSGI_APPLICATION = 'jblog.wsgi.application'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
