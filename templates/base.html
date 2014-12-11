@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <div id="wrap">
     <nav class="navbar navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -37,10 +38,6 @@
                         </ul>
                     </li>
                 </ul>
-
-            </div>
-            
-           
             </div>
         </div>
     </nav>
@@ -50,6 +47,12 @@
             <div class='col-xs-12'>
                 {% block content %}{% endblock %}
             </div>
+        </div>
+    </div>
+</div>
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit pull-right"><a href="http://bootswatch.com/lumen/">Lumen Bootstrap Theme</a> from <a href="http://bootswatch.com/">Bootswatch</a></p>
         </div>
     </div>
 </body>
