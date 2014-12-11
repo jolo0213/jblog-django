@@ -4,22 +4,15 @@
 
 {% if posts %}
     {% for post in posts %}
-    	<div class="panel panel-default">
-    		<div class="panel-heading"><h4>{{ post.title }}</h4></div>
-    		<div class='panel-body'>
-	        	<p class='postdate'>Posted: {{ post.pub_date }}</p>
-	        	<p class='lead'>{{ post.entry|safe }}</p>
-	    	</div>
-		</div>
+		<h1>{{ post.title }}</h1>
+		<p class='lead'>{{ post.entry|safe }}</p>
+	    <p class='postdate'>Posted: {{ post.pub_date }}</p>
+		<hr>
     {% endfor %}
 {% else %}
-	<div class="panel panel-default">
-		<div class='panel-body'>
-			<div class='alert alert-danger'>
-				There are currently no posts!
-			</div>        
-    	</div>
-	</div>
+	<div class='alert alert-danger'>
+		There are currently no posts!
+	</div>        
 {% endif %}
 
 {% endblock %}
