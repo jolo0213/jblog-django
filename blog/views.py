@@ -11,9 +11,6 @@ from django.template.loader import render_to_string
 
 from blog.models import Post
 
-def home(request):
-	return render_to_response('blog/home.html')
-
 def index(request):
-	posts = Post.objects.all()
+	posts = Post.objects.all().order_by('-pub_date')
 	return render(request,'blog/index.html',{'posts':posts,})

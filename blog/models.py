@@ -6,7 +6,7 @@ from django.utils import timezone
 class Post(models.Model):
 	title = models.CharField('Title',max_length=200)
 	pub_date = models.DateTimeField('Date Published')
-	entry = models.CharField(max_length=10000)
+	entry = models.TextField(max_length=10000)
 
 	def was_published_recently(self):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=7)
