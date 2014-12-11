@@ -8,7 +8,7 @@
     		<div class="panel-heading"><h4>{{ post.title }}</h4></div>
     		<div class='panel-body'>
 	        	<p class='postdate'>Posted: {{ post.pub_date }}</p>
-	        	<p>{{ post.entry|linebreaks }}</p>
+	        	<p class='lead'>{{ post.entry|safe }}</p>
 	    	</div>
 		</div>
     {% endfor %}
