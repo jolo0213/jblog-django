@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+<p class='lead'>{{ post.entry|safe }}</p>
+<p class='postdate'>Posted: {{ post.pub_date }}</p>
+<a class="btn btn-default" href="/blog/">Back</a>
+{% endblock %}
