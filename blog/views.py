@@ -12,5 +12,9 @@ from django.template.loader import render_to_string
 from blog.models import Post
 
 def index(request):
-	posts = Post.objects.all().order_by('-pub_date')
+	posts = Post.objects.all().order_by('-pub_date')[:5]
 	return render(request,'blog/index.html',{'posts':posts,})
+
+def post(request, post_id):
+	post = get_object_or_404(Post,pk=post_id)
+	return render(request,'blog/post.html',{'post':post,})

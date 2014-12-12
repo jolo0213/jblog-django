@@ -4,15 +4,13 @@
 
 {% if posts %}
     {% for post in posts %}
-		<h1>{{ post.title }}</h1>
+		<h1><a href="{% url 'blog:post' post.pk %}">{{ post.title }}</a></h1>
 		<p class='lead'>{{ post.entry|safe }}</p>
 	    <p class='postdate'>Posted: {{ post.pub_date }}</p>
 		<hr>
     {% endfor %}
 {% else %}
-	<div class='alert alert-danger'>
-		There are currently no posts!
-	</div>        
+	<h1>There are currently no posts!</h1>
 {% endif %}
 
 {% endblock %}
