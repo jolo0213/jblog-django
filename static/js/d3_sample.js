@@ -1,4 +1,4 @@
-var sample = {{ STATIC_URL }};
+var sample = '/static/';
 
 var width = 500,
     height = 500,
