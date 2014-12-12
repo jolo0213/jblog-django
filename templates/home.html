@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ newest.title }}</h1>
+<p class='postdate'>Posted: {{ newest.pub_date }}</p>
+<p class="lead">
+	{{ newest.entry|safe|truncatewords:200 }} <a href="{% url 'blog:post' newest.pk %}">read more</a>.
+</p>
+
+<hr>
+
+<h1>Welcome</h1>
+<p class="lead">
+	{{ flatpage.content|safe }}
+</p>
+
+{% endblock %}
