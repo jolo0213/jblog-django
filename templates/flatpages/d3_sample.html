@@ -11,7 +11,8 @@ body { font: 10px sans-serif; }
 {% endblock %}
 
 {% block content %}
-{{ flatpage.title }}
-<center></center>
+<h1>{{ flatpage.title }}</h1>
+<div id="d3sample"></div><br>
 <script type="text/javascript" src="{{ STATIC_URL }}js/d3_sample.js"></script>
+<p class="lead">Here we have my first practice sample of using D3 to graph a donut chart with monsters from Puzzle and Dragons. Each section represents what fraction of the total attack each monster contributes.</p>
 {% endblock %}

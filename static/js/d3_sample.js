@@ -15,7 +15,7 @@ var pie = d3.layout.pie()
     .sort(null)
     .value(function(d) { return d.atk; });
 
-var svg = d3.select("center").append("svg")
+var svg = d3.select("#d3sample").append("svg")
     .attr("width", width)
     .attr("height", height)
   .append("g")
