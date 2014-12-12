@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block script %}
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<style>
+body { font: 10px sans-serif; }
+.arc path { stroke: #fff; }
+.primary { font-size: 46px; }
+.secondary { font-size: 12px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<center></center>
+<script type="text/javascript" src="{{ STATIC_URL }}js/d3_sample.js"></script>
+{% endblock %}
