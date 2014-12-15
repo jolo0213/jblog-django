@@ -17,7 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*^7ninh=zy_16i&9b(9yxuato&8igwmvw=#wzbaxm*f-4)(^%z'
+SECRET_FILE = os.path.join(BASE_DIR, 'secret.txt')
+SECRET_KEY = open(SECRET_FILE).read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -121,12 +122,15 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+SECRET_DB = os.path.join(BASE_DIR, 'secretdb.txt')
+SECRET_DB_KEY = open(SECRET_DB).read().strip()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd25rvl890p6o19',
         'USER': 'nlzuvigzfimflx',
-        'PASSWORD': 'gb5VGVwELtDmFACw75RLhLqq5W',
+        'PASSWORD': SECRET_DB_KEY,
         'HOST':'ec2-54-225-243-113.compute-1.amazonaws.com',
         'PORT':'5432'
     }
